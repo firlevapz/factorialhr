@@ -3,12 +3,12 @@ import sys
 from calendar import Calendar
 from datetime import date
 
-from factorial.exceptions import ApiError, AuthenticationTokenNotFound, UserNotLoggedIn
 from factorial.factorialclient import FactorialClient
-from factorial.loader import JsonCredentials, JsonWork
+from factorial.loader import EnvCredentials, JsonWork
+
+settings_file = "factorial_settings.json"
 
 if __name__ == "__main__":
-    settings_file = "factorial_settings.json"
     parser = argparse.ArgumentParser(
         description="Log time to factorialhr",
     )
@@ -39,6 +39,6 @@ if __name__ == "__main__":
         parser.print_usage()
         sys.exit(1)
 
-    client = FactorialClient.load_from_settings(JsonCredentials(settings_file))
+    client = FactorialClient.load_from_settings(EnvCredentials())
     for day in days:
         client.worked_day(JsonWork(settings_file), day=day)

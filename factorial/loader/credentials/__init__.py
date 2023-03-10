@@ -1,1 +1,2 @@
+from .env_credentials_loader import EnvCredentials
 from .json_credentials_loader import JsonCredentials
