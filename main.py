@@ -15,9 +15,21 @@ if __name__ == "__main__":
     parser.add_argument(
         "-t", "--today", action="store_true", help="log time just for today"
     )
-    parser.add_argument("-d", "--day", type=int)
-    parser.add_argument("-m", "--month", type=int)
-    parser.add_argument("-y", "--year", type=int)
+    parser.add_argument(
+        "-d",
+        "--day",
+        type=int,
+        help="set day of month, if not set log all days of month",
+    )
+    parser.add_argument(
+        "-m",
+        "--month",
+        type=int,
+        help="set month, default: current month",
+    )
+    parser.add_argument(
+        "-y", "--year", type=int, help="set year, default: current year"
+    )
 
     args = parser.parse_args()
 
