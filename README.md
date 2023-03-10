@@ -2,6 +2,11 @@
 Python adapter to use the factorialhr api and automate
 sign tasks.
 
+## Configure env file
+Easiest to configure to create a `.env` file with the
+cookie from your browser session copied there with
+`FACTORIAL_COOKIE=...`
+
 ## Configure settings file
 Configuring the settings file we can use the `main.py`
 to automatically sign the work of today (default) 
@@ -10,12 +15,6 @@ By default the name of the settings file is
 `factorial_settings.json` you can always change it.
 ```json5
 {
-  "user": {
-    // Email to login on factorialhr
-    "email": "",
-    // Password to login on factorialhr
-    "password": ""
-  },
   "work": {
     // Work start time
     "start": "7:30",
@@ -55,6 +54,24 @@ By default the name of the settings file is
     ]
   }
 }
+```
+
+## Usage
+
+Install python3 and pip and run `pip install -r requirements.txt`
+preferably in an own venv!
+
+```
+usage: main.py [-h] [-t] [-d DAY] [-m MONTH] [-y YEAR]
+
+Log time to factorialhr
+
+options:
+  -h, --help            show this help message and exit
+  -t, --today           log time just for today
+  -d DAY, --day DAY
+  -m MONTH, --month MONTH
+  -y YEAR, --year YEAR
 ```
 
 ## Automatically sign today
