@@ -1,17 +1,16 @@
 {
   "user": {
-    "email": "xxxx",
-    "password": "xxxx"
+    "cookie": "..."
   },
   "work": {
-    "start": "7:30",
-    "end": "15:30",
-    "minutes_variation": 10,
+    "start": "8:30",
+    "end": "16:30",
+    "minutes_variation": 17,
     "resave": false,
     "breaks": [
       {
-        "start": "10:00",
-        "end": "10:30",
+        "start": "12:00",
+        "end": "12:30",
         "minutes_variation": 30
       }
     ]

@@ -4,18 +4,18 @@ from .abstract_credentials import AbstractCredentials
 
 
 class JsonCredentials(AbstractCredentials):
-
     def __init__(self, filename: str):
         super().__init__()
 
         self.filename = filename
 
-        with open(filename, 'r') as f:
+        with open(filename, "r") as f:
             settings = json.load(f)
 
-            context = settings.get('user', {})
-            self.email = context.get('email')
-            self.password = context.get('password')
+            context = settings.get("user", {})
+            self.email = context.get("email")
+            self.password = context.get("password")
+            self.cookie = context.get("cookie")
 
     def get_email(self) -> str:
         """Get email from json file to login to factorialhr
@@ -30,3 +30,6 @@ class JsonCredentials(AbstractCredentials):
         :return: string
         """
         return self.password
+
+    def get_cookie(self) -> str:
+        return self.cookie
