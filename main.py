@@ -44,8 +44,14 @@ if __name__ == "__main__":
         days = [date(year, month, day)]
     elif args.month:
         c = Calendar()
+        # generate list of all working weekdays of the month
         days = [
-            d for d in [x for x in c.itermonthdates(year, month) if x.month == month]
+            d
+            for d in [
+                x
+                for x in c.itermonthdates(year, month)
+                if x.month == month and x.weekday() not in (5, 6)
+            ]
         ]
     else:
         parser.print_usage()
