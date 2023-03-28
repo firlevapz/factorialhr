@@ -50,7 +50,7 @@ if __name__ == "__main__":
             for d in [
                 x
                 for x in c.itermonthdates(year, month)
-                if x.month == month and x.weekday() not in (5, 6)
+                if x.month == month and x.weekday() not in (5, 6) and x <= today
             ]
         ]
     else:
