@@ -591,7 +591,10 @@ class FactorialClient:
         period = self.get_period(year=year, month=month)
         current_period = period[0]
         period_id = current_period["id"]
-        params = {"period_id": period_id}
+        params = {
+            "period_id": period_id,
+            "employee_id": self.current_user.get("id", ""),
+        }
         response = self.session.get(self.SHIFT_URL, params=params)
         self.check_status_code(response.status_code, http_client.OK)
         return response.json()
@@ -608,7 +611,11 @@ class FactorialClient:
         worked_hours = []
         # return next(day_it for day_it in calendar if day_it['day'] == day)
         for day_it in calendar:
-            if day_it.get("day") == day:
+            if (
+                day_it.get("day") == day
+                and day_it.get("month") == month
+                and day_it.get("year") == year
+            ):
                 worked_hours.append(day_it)
         return worked_hours
 

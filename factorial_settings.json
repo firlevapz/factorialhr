@@ -1,13 +1,13 @@
 {
   "work": {
     "start": "8:30",
-    "end": "16:45",
-    "minutes_variation": 17,
+    "end": "16:55",
+    "minutes_variation": 22,
     "resave": false,
     "breaks": [
       {
         "start": "12:00",
-        "end": "12:30",
+        "end": "12:40",
         "minutes_variation": 30
       }
     ]
