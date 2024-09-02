@@ -669,7 +669,7 @@ class FactorialClient:
         payload = {
             "clock_in": f"{start_hour}:{start_minute}",
             "clock_out": f"{end_hour}:{end_minute}",
-            "day": day,
+            "date": formatted_date,
             "period_id": period_id,
         }
         response = self.session.post(self.SHIFT_URL, data=payload)
